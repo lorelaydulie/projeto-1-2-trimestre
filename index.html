@@ -1,1 +1,138 @@
-2 de julho, 2026, Guarapuava
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Feed - Conexões</title>
+    <style>
+        /* Configurações Globais e Fundo Mesclado */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #2e0854, #8a2be2, #ff007f);
+            background-size: 400% 400%;
+            animation: gradientBg 15s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fff;
+            padding: 20px;
+        }
+
+        /* Animação suave para o fundo gradiente */
+        @keyframes gradientBg {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Cabeçalho */
+        header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+
+        /* Container dos Posts */
+        .feed-container {
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        /* Estilização do Post */
+        .post {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .post:hover {
+            transform: translateY(-5px);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #ff007f, #8a2be2);
+            margin-right: 12px;
+            border: 2px solid #fff;
+        }
+
+        .user-info h3 {
+            font-size: 1.1rem;
+            color: #fff;
+        }
+
+        .user-info span {
+            font-size: 0.8rem;
+            color: #ddd;
+        }
+
+        .post-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #f5f5f5;
+            margin-bottom: 20px;
+        }
+
+        /* Botões de Like e Dislike */
+        .post-actions {
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 15px;
+        }
+
+        .btn-action {
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Estados ativos para os botões */
+        .btn-like.active {
+            background-color: #ff007f;
+            box-shadow: 0 0 10px #ff007f;
+        }
+
+        .btn-dislike.active {
+            background-color: #8a2be2;
+            box-shadow: 0 0 10px #8
